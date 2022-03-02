@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-djangoproject/blog/migrations/
+djangotest/blog/migrations/
 
 # C extensions
 *.so
