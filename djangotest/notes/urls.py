@@ -1,14 +1,11 @@
-
-from . import views
-from django.conf.urls import url
+# urls.py
 from django.urls import include, path
 from rest_framework import routers
 from .views import NotesViewSet
 
 router = routers.DefaultRouter()
-router.register(r'blog', NotesViewSet)
+router.register(r'notes', NotesViewSet)
 
 urlpatterns = [
-    # url(r'^$', views.blog_title, name="blog_title"),
     path('', include(router.urls)),
 ]
