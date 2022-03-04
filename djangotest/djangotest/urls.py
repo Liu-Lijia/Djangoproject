@@ -18,11 +18,13 @@ from django.urls import path, include
 # from django.conf.urls import url, include
 from notes import urls as notes_urls
 from blog import urls as blog_urls
+from quickstart import urls as quickstart_urls
 
 # app_name='blog'
 urlpatterns = [
     path('admin/', admin.site.urls),
     # url(r'^blog/', include('blog.urls')),
+    path('quickstart/', include(quickstart_urls)),
     path('blogapi/', include(blog_urls)),
     path('api/', include(notes_urls)),
     path('api-auth/', include('rest_framework.urls')),

@@ -41,7 +41,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'notes',
+    'quickstart',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 # This should be changed once we put this in production.
 CORS_ORIGIN_ALLOW_ALL = True
