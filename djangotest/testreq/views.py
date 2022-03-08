@@ -35,24 +35,38 @@ def create_id(num):
     identity_ids = [fake.ssn() for i in range(int(num))]
     return " ".join(identity_ids)
 
+# region
+# @require_http_methods(['GET', 'POST'])
+# def id(request):
+#     print(request)
+#     print(type(request))
+#     num = request.POST.get("num")  # 如果"Content-type"="application/x-www-form-urlencoded"
+#     # num = json.loads(request.body).get("num") # 如果"Content-type"="application/json"
+#     # number = request.args.get("num")
+#     # num = request.GET['num']
+#     # num = request.GET.get("num")
+#     print(num)
+#     # print(number)
+#     # print(request.GET)
+#     if num == "" or num is None:
+#         data1 = create_id(5)
+#     else:
+#         data1 = create_id(num)
+#     return HttpResponse(data1)
+# endrigion
+
 @require_http_methods(['GET', 'POST'])
 def id(request):
     print(request)
-    print(type(request))
-    num = request.POST.get("num")  # 如果"Content-type"="application/x-www-form-urlencoded"
-    # num = json.loads(request.body).get("num") # 如果"Content-type"="application/json"
-    # number = request.args.get("num")
-    # num = request.GET['num']
-    # num = request.GET.get("num")
+    print(request.body)
+    print(json.loads(request.body))
+    num = json.loads(request.body)["num"]
     print(num)
-    # print(number)
-    # print(request.GET)
     if num == "" or num is None:
         data1 = create_id(5)
     else:
         data1 = create_id(num)
     return HttpResponse(data1)
-
 
 def create_name(num):
     """生成姓名"""
