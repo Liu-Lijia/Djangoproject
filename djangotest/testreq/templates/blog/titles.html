@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %} 
+    <div class="hello">
+      <h1>{{ msg }}</h1>
+      <h1> Add something for test </h1>
+    </div>
+{% endblock %}
+
+
+  <script>
+  export default {
+    name: 'HelloWorld',
+    props: {
+      msg: String
+    }
+  }
+  </script>
+  

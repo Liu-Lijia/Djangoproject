@@ -27,6 +27,27 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# 允许的请求头
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+# 允许的http请求
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 # Application definition
 
@@ -42,6 +63,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'notes',
     'quickstart',
+    'testreq',
 ]
 
 REST_FRAMEWORK = {
@@ -51,6 +73,7 @@ REST_FRAMEWORK = {
 
 # This should be changed once we put this in production.
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True # 允许携带cookie 
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

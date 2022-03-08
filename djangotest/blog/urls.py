@@ -9,6 +9,9 @@ router = routers.DefaultRouter()
 router.register(r'blog', NotesViewSet)
 
 urlpatterns = [
-    # url(r'^$', views.blog_title, name="blog_title"),
-    path('', include(router.urls)),
+    # 展示blog_title（blog/titles.html）中的HTML
+    url(r'^$', views.blog_title, name="blog_title"),
+
+    #以API的方式得到MOdel的数据
+    # path('', include(router.urls)),
 ]
