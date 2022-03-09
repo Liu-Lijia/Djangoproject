@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'notes',
     'quickstart',
     'testreq',
+    'polls.apps.PollsConfig',
 ]
 
 REST_FRAMEWORK = {
